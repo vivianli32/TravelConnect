@@ -10,8 +10,13 @@ class LoginForm(Form): #Form : extends form object
 class CreateUserandAOE(Form):
 	username = StringField('username', validators=[DataRequired()])
 	email = StringField('email', validators=[DataRequired()])
-	profile = StringField('profile', validators=[validators.Length(min=10, max=700)])
-	state = StringField('state', validators=[validators.Length(min=2, max=2)])
-	city = StringField('city', validators=[validators.Length(min=2, max=100)])
-	activity = StringField('activity', validators=[validators.Length(min=2, max=100)])
+	profile = StringField('profile', validators=[validators.Length(min=10, max=700), DataRequired()])
+	state = StringField('state', validators=[validators.Length(min=2, max=2), DataRequired()])
+	city = StringField('city', validators=[validators.Length(min=2, max=100), DataRequired()])
+	activity = StringField('activity', validators=[validators.Length(min=2, max=100), DataRequired()])
+
+class Search(Form):
+	state = StringField('state', validators=[validators.Length(min=2, max=2), DataRequired()])
+	city = StringField('city', validators=[validators.Length(min=2, max=100), DataRequired()])
+	activity = StringField('activity', validators=[validators.Length(min=2, max=100), DataRequired()])
 

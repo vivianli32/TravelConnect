@@ -4,7 +4,6 @@ from .forms import LoginForm, CreateUserandAOE
 import pdb
 
 
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -70,4 +69,9 @@ def createuser():
     print ('Form not validated.')
     return render_template('createuser.html',
                             form=form)
+
+#@app.route('/search', methods=['GET'])
+#def search():
+#    form = Search()
+#    if form.validate_on_submit():
 

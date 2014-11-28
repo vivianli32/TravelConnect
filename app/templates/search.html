@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Search experts</title>
+</head>
+<body>
+	<form action="" method="get" name="search">
+		{{ form.hidden_tag() }}
+		<p>
+			<h2> Search experts. Get advice.</h2> <br>
+			<h4> All fields required.</h4>
+		</p>
+		<div>
+			State: {{ form.state }} <br>
+			City: {{ form.city }} <br>
+			Activity: {{ form.activity }} <br>
+			{% for error in form.state.errors %}
+				"State" error! 
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+            {% for error in form.city.errors %}
+            	"City" field error! 
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+			{% for error in form.activity.errors %}
+            	"Activity" field error!
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+		</div>
+		<p><input type="submit" value="Search"></p>
+	</form>
+</body>
+</html>	
